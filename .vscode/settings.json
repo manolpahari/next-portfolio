@@ -1,7 +1,23 @@
 {
-    "editor.fontFamily": "Fira Code",
+    "editor.fontFamily": "Fira Code SemiBold",
     "editor.fontLigatures": true,
     "editor.fontWeight": "400",
     "editor.fontSize": 14,
-    "editor.tabCompletion": "on", // Regular
+    "editor.tabCompletion": "on",
+    "emmet.triggerExpansionOnTab": true, // Regular
+
+     // Lines will wrap at the viewport Width
+     "editor.wordWrap": true,
+
+     "window.zoomLevel": 1,
+     "javascript.updateImportsOnFileMove.enabled": "always",
+     "emmet.triggerExpansionOnTab": true,
+     "emmet.showSuggestionsAsSnippets": true,
+     "editor.snippetSuggestions": "top",
+     "emmet.includeLanguages": {
+         "javascript": "javascriptreact"
+     },
+     "emmet.syntaxProfiles": {
+         "javascript": "jsx"
+     }
 }
