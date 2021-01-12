@@ -1,24 +1,25 @@
 import { useEffect } from 'react';
 import Link from "next/link";
 import Head from "next/head";
-import { useRouter } from "next/router";
+import { useRouter, withRouter } from "next/router";
 import _JSXStyle from 'styled-jsx/style';
 import Nprogress from 'nprogress';
 
-const Layout = ({ children, title }) => {
+const Layout = ({ children, title, router }) => {
 
-    const router = useRouter();
+    // const router = useRouter();
 
+
+    const handleRouteChangeStart = (url) => {
+      console.log(url)
+      Nprogress.start();
+    }
+    const handleRouteChangeComplete = (url) => {
+        console.log(url)
+        Nprogress.done();
+      }
 
     useEffect(() => {
-        const handleRouteChangeStart = (url) => {
-          console.log(url)
-          Nprogress.start();
-        }
-        const handleRouteChangeComplete = (url) => {
-            console.log(url)
-            Nprogress.done();
-          }
     
         router.events.on('routeChangeStart', handleRouteChangeStart)
     
@@ -26,6 +27,17 @@ const Layout = ({ children, title }) => {
         // from the event with the `off` method:
         return () => {
           router.events.off('routeChangeStart', handleRouteChangeComplete)
+        }
+      }, [])
+
+      useEffect(() => {
+    
+        router.events.on('routeChangeComplete', handleRouteChangeComplete)
+    
+        // If the component is unmounted, unsubscribe
+        // from the event with the `off` method:
+        return () => {
+          router.events.off('routeChangeComplete', handleRouteChangeComplete)
         }
       }, [])
     
@@ -90,4 +102,4 @@ const Layout = ({ children, title }) => {
   );
 };
 
-export default Layout;
+export default withRouter(Layout);

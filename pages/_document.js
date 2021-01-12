@@ -4,7 +4,7 @@ import _JSXStyle from 'styled-jsx/style';
 export default class MyDocument extends Document {
     render() {
         return (
-            <html>
+            <html lang="en">
                 <Head>
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"/>
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
