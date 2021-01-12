@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "next -p 4000",
     "build": "next build",
-    "export": "next export",
-    "vercel-build": "next build && next export -o dist"
+    "export": "next export"
   },
   "keywords": [],
   "author": "",
