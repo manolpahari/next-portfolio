@@ -1,14 +1,11 @@
 import { useEffect } from 'react';
 import Link from "next/link";
 import Head from "next/head";
-import { useRouter, withRouter } from "next/router";
+import { withRouter } from "next/router";
 import _JSXStyle from 'styled-jsx/style';
 import Nprogress from 'nprogress';
 
 const Layout = ({ children, title, router }) => {
-
-    // const router = useRouter();
-
 
     const handleRouteChangeStart = (url) => {
       console.log(url)
@@ -53,6 +50,9 @@ const Layout = ({ children, title, router }) => {
         </Link>
         <Link href="/about">
           <a>About</a>
+        </Link>
+        <Link href="/blog">
+          <a>Blog</a>
         </Link>
         <Link href="/hireme">
           <a>HireMe</a>
